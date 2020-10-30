@@ -1,23 +1,23 @@
 require('dotenv').config();
 
-const database_name = process.env.DB_NAME;
-const database_user = process.env.DB_USER;
-const database_password = process.env.DB_PASSWORD;
-const database_testing_name = process.env.DB_TESTING_NAME;
+const db_name = process.env.DB_NAME;
+const db_user = process.env.DB_USER;
+const db_password = process.env.DB_PASSWORD;
+const db_testing_name = process.env.DB_TESTING_NAME;
 
 module.exports = {
   development: {
     client: 'pg',
     connection: {
-      database: database_name,
-      user: database_user,
-      password: database_password,
+      db: db_name,
+      user: db_user,
+      password: db_password,
     },
     migrations: {
-      directory: './database/migrations',
+      directory: './db/migrations',
     },
     seeds: {
-      directory: './database/seeds/dev',
+      directory: './db/seeds/dev',
     },
     useNullAsDefault: true,
   },
@@ -25,15 +25,15 @@ module.exports = {
   test: {
     client: 'pg',
     connection: {
-      database: database_testing_name,
-      user: database_user,
-      password: database_password,
+      db: db_testing_name,
+      user: db_user,
+      password: db_password,
     },
     migrations: {
-      directory: './database/migrations',
+      directory: './db/migrations',
     },
     seeds: {
-      directory: './database/seeds/test',
+      directory: './db/seeds/test',
     },
     useNullAsDefault: true,
   },
@@ -42,10 +42,10 @@ module.exports = {
     client: 'pg',
     connection: process.env.DATABASE_URL,
     migrations: {
-      directory: './database/migrations',
+      directory: './db/migrations',
     },
     seeds: {
-      directory: './database/seeds/production',
+      directory: './db/seeds/production',
     },
     useNullAsDefault: true,
   },

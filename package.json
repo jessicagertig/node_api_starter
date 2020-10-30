@@ -1,7 +1,7 @@
 {
-  "name": "genuine-article-api",
+  "name": "node-api-starter",
   "version": "1.0.0",
-  "description": "A RESTful API providing access to information and media about historical clothing as preserved in museums and collections.",
+  "description": "A RESTful API",
   "main": "index.js",
   "scripts": {
     "server": "nodemon server.js",
@@ -15,15 +15,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JessicaGCooper/TheGenuineArticleAPI"
+    "url": "git+https://github.com/JessicaGCooper/node_api_starter.git"
   },
   "keywords": [],
-  "author": "Jessica G Cooper",
+  "author": "Jessica Gertig Cooper",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/JessicaGCooper/TheGenuineArticleAPI/issues"
+    "url": "https://github.com/JessicaGCooper/node_api_starter/issues"
   },
-  "homepage": "https://github.com/JessicaGCooper/TheGenuineArticleAPI#readme",
+  "homepage": "https://github.com/JessicaGCooper/node_api_starter#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
