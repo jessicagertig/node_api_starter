@@ -25,4 +25,8 @@ contructions of tables:
 
     Migrations and seed files will be made with the appropriate commands:
         ---knex migrate:make migration_name
-        ---knex seed:make seed_name    
+        ---knex seed:make seed_name
+
+For AUTH a basic auth is implemented in this repo.  A third party auth could be used instead and all original auth files and references removed.    
+
+In order to do this a simple users table needs to be created and a users router and model created as well.
