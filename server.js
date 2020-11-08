@@ -16,11 +16,9 @@ server.use(express.json());
 server.use(cors());
 
 //test to make sure server is up and running
-server.get("/", (req, res) => {
-    res
-    .status(200)
-    .json({ api: "up", dbenv: process.env.NODE_ENV });
-})
+server.get('/', (req, res) => {
+  res.status(200).json({ api: 'up', dbenv: process.env.NODE_ENV });
+});
 
 //direct server/app to use routers and add any additions to path such as 'api' if you nest server.js in a folder named 'api'
 // server.use('/api', authRouter);
