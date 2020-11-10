@@ -43,4 +43,28 @@ router.get('/users/:id', restricted, (req, res) => {
     });
 });
 
+router.delete('/users/:id', (req, res) => {
+  const id = req.params.id;
+
+  Users.findById(id)
+    .then((user) => {
+      Users.remove(id).then((removeUser) => {
+        if (removeUser) {
+          res.status(200).json({
+            message: `The User with ID number ${id} has been successfully removed.`,
+            user,
+          });
+        } else {
+          res.status(404).json({
+            errorMessage: 'The user with the specified ID does not exist.',
+          });
+        }
+      });
+    })
+    .catch((error) => {
+      console.log('error on DELETE /users/:id', error);
+      res.status(500).json({ errorMessage: 'The user could not be removed.' });
+    });
+});
+
 module.exports = router;
